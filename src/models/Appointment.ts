@@ -61,7 +61,7 @@ const appointmentSchema = new Schema<IAppointment>(
   }
 );
 
-const Appointment = mongoose.model<IAppointment>(
+export const Appointment = mongoose.model<IAppointment>(
   "Appointment",
   appointmentSchema
 );
