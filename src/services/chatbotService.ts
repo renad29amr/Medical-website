@@ -4,13 +4,11 @@ import {Appointment} from "../models/Appointment";
 import { env } from "../config/env";
 
 
-const genAI = new GoogleGenerativeAI(
-    env.geminiApiKey
-);
+const genAI = env.geminiApiKey ? new GoogleGenerativeAI(env.geminiApiKey) : null;
 
-const model = genAI.getGenerativeModel({
+const model = genAI ? genAI.getGenerativeModel({
     model: "gemini-3.6-flash",
-});
+}) : null;
 
 
 // =====================================================
@@ -57,12 +55,12 @@ const getAvailableSpecializations = async (): Promise<string[]> => {
 
     const doctors = await DoctorProfile
         .find()
-        .select("specialization");
+        .select("specialty");
 
     const specializations = [
         ...new Set(
             doctors
-                .map((doctor: any) => doctor.specialization)
+                .map((doctor: any) => doctor.specialty)
                 .filter(Boolean)
         ),
     ];
@@ -104,6 +102,13 @@ User message:
 
 "${message}"
 `;
+
+    if (!model) {
+        return {
+            type: "general",
+            message: "Chatbot is unavailable until GEMINI_API_KEY is configured.",
+        };
+    }
 
     const result = await model.generateContent(prompt);
 
@@ -176,6 +181,16 @@ high
 emergency
 `;
 
+    if (!model) {
+        return {
+            possibleConditions: [],
+            recommendedSpecialization: null,
+            urgency: "low",
+            explanation: "Chatbot is unavailable until GEMINI_API_KEY is configured.",
+            followUpQuestions: [],
+        };
+    }
+
     const result = await model.generateContent(prompt);
 
     const text = result.response
@@ -201,7 +216,7 @@ const findDoctors = async (
     }
 
     const doctors = await DoctorProfile.find({
-        specialization: {
+        specialty: {
             $regex: new RegExp(
                 `^${specialization}$`,
                 "i"
@@ -487,19 +502,32 @@ Return ONLY valid JSON:
 }
 `;
 
-    const result =
-        await model.generateContent(prompt);
+    if (!model) {
+        return {
+            chiefComplaint: "",
+            symptoms: [],
+            duration: "",
+            severity: "",
+            triggers: [],
+            associatedSymptoms: [],
+            medications: [],
+            previousConditions: [],
+            allergies: [],
+            timeline: [],
+            questionsForDoctor: [],
+        };
+    }
 
-    const text =
-        result.response
-            .text()
-            .replace(/```json/g, "")
-            .replace(/```/g, "")
-            .trim();
+    const result = await model.generateContent(prompt);
+
+    const text = result.response
+        .text()
+        .replace(/```json/g, "")
+        .replace(/```/g, "")
+        .trim();
 
     return JSON.parse(text);
 };
-
 
 // =====================================================
 // CARE CONTINUITY
@@ -515,10 +543,10 @@ export const getPatientHistorySummary = async (
         })
             .populate(
                 "doctor",
-                "name specialization"
+                "fullName specialty"
             )
             .sort({
-                date: -1,
+                appointmentDate: -1,
             });
 
 
@@ -540,7 +568,7 @@ export const getPatientHistorySummary = async (
                 appointment._id,
 
             date:
-                appointment.date,
+                appointment.appointmentDate,
 
             doctor:
                 appointment.doctor,

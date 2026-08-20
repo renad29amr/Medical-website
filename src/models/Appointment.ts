@@ -67,3 +67,4 @@ export const Appointment = mongoose.model<IAppointment>(
 );
 
 export default Appointment;
+

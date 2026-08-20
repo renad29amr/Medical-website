@@ -30,7 +30,7 @@ export const createSchedule = async (req: Request, res: Response): Promise<void>
 // GET /api/schedules
 export const getAllSchedules = async (req: Request, res: Response): Promise<void> => {
   try {
-    const schedules = await Schedule.find().populate("doctor", "specialty clinicAddress");
+    const schedules = await Schedule.find().populate("doctor", "specialty clinicAddress user");
     res.status(200).json(schedules);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch schedules.", error });
