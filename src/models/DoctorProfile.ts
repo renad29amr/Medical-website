@@ -38,4 +38,6 @@ const doctorProfileSchema = new mongoose.Schema({
   },
 });
 
+
+
 export const DoctorProfile = mongoose.model("DoctorProfile", doctorProfileSchema);

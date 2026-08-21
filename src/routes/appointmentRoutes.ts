@@ -105,6 +105,13 @@ router.get(
   appointmentController.getAppointments
 );
 
+router.get(
+  "/available-slots",
+  authenticate,
+  authorizeRoles("patient"),
+  appointmentController.getAvailableTimeSlots
+);
+
 /**
  * @swagger
  * /api/appointments/doctor:

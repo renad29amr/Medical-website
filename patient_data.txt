@@ -1,0 +1,61 @@
+{
+  "fullName": "Mohamed Ali",
+  "email": "mohamed.ali@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+
+{
+  "fullName": "Nour Ahmed",
+  "email": "nour.ahmed@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Omar Hassan",
+  "email": "omar.hassan@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Mariam Khaled",
+  "email": "mariam.khaled@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Youssef Adel",
+  "email": "youssef.adel@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Salma Ibrahim",
+  "email": "salma.ibrahim@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Karim Mostafa",
+  "email": "karim.mostafa@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Jana Mahmoud",
+  "email": "jana.mahmoud@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Adam Samir",
+  "email": "adam.samir@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}
+{
+  "fullName": "Laila Tarek",
+  "email": "laila.tarek@test.com",
+  "password": "Patient123!",
+  "role": "patient"
+}

@@ -35,4 +35,10 @@ const scheduleSchema = new mongoose.Schema({
   },
 });
 
+// Prevent duplicate schedules for the same doctor on the same day
+scheduleSchema.index(
+  { doctor: 1, day: 1 },
+  { unique: true }
+);
+
 export const Schedule = mongoose.model("Schedule", scheduleSchema);

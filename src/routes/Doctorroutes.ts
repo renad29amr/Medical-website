@@ -17,12 +17,16 @@ import {
   getAllDoctors,
   getDoctorById,
   updateOwnProfile,
+  searchDoctors,
 } from "../controllers/Doctorcontroller";
 
 import {
   authenticate,
   authorizeRoles,
 } from "../middleware/authMiddleware";
+
+import { protect, authorize } from "../middleware/auth";
+
 
 const router = Router();
 
@@ -41,6 +45,13 @@ const router = Router();
  *         description: Internal server error
  */
 router.get("/", getAllDoctors);
+
+router.get(
+  "/search",
+  protect,
+  authorize("patient", "admin"),
+  searchDoctors
+);
 
 /**
  * @swagger

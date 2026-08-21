@@ -1,0 +1,82 @@
+[
+  {
+    "patient": { "$oid": "6a883471ba7b54c69dbf847a" },
+    "doctor": { "$oid": "6a882cd9d19127beffe43d26" },
+    "appointmentDate": { "$date": "2026-08-19T09:00:00.000Z" },
+    "timeSlot": "09:00 - 10:00",
+    "status": "Completed",
+    "notes": "Routine cardiac check-up and blood pressure review."
+  },
+  {
+    "patient": { "$oid": "6a88348eba7b54c69dbf847d" },
+    "doctor": { "$oid": "6a882d33d19127beffe43d2b" },
+    "appointmentDate": { "$date": "2026-08-20T10:00:00.000Z" },
+    "timeSlot": "10:00 - 11:00",
+    "status": "Completed",
+    "notes": "Skin consultation and treatment follow-up."
+  },
+  {
+    "patient": { "$oid": "6a883546ba7b54c69dbf8480" },
+    "doctor": { "$oid": "6a882d41d19127beffe43d30" },
+    "appointmentDate": { "$date": "2026-08-22T09:00:00.000Z" },
+    "timeSlot": "09:00 - 10:00",
+    "status": "Confirmed",
+    "notes": "General pediatric check-up."
+  },
+  {
+    "patient": { "$oid": "6a883554ba7b54c69dbf8483" },
+    "doctor": { "$oid": "6a882d5ad19127beffe43d35" },
+    "appointmentDate": { "$date": "2026-08-25T09:00:00.000Z" },
+    "timeSlot": "09:00 - 10:00",
+    "status": "Confirmed",
+    "notes": "Follow-up neurological consultation."
+  },
+  {
+    "patient": { "$oid": "6a883564ba7b54c69dbf8486" },
+    "doctor": { "$oid": "6a882d6ed19127beffe43d3a" },
+    "appointmentDate": { "$date": "2026-08-24T16:00:00.000Z" },
+    "timeSlot": "16:00 - 17:00",
+    "status": "Pending",
+    "notes": "Orthopedic consultation for joint discomfort."
+  },
+  {
+    "patient": { "$oid": "6a883577ba7b54c69dbf8489" },
+    "doctor": { "$oid": "6a882d83d19127beffe43d3f" },
+    "appointmentDate": { "$date": "2026-08-25T11:00:00.000Z" },
+    "timeSlot": "11:00 - 12:00",
+    "status": "Confirmed",
+    "notes": "Ophthalmology follow-up."
+  },
+  {
+    "patient": { "$oid": "6a88358dba7b54c69dbf848c" },
+    "doctor": { "$oid": "6a882d96d19127beffe43d44" },
+    "appointmentDate": { "$date": "2026-08-22T12:00:00.000Z" },
+    "timeSlot": "12:00 - 13:00",
+    "status": "Confirmed",
+    "notes": "Dental cleaning and examination."
+  },
+  {
+    "patient": { "$oid": "6a88359dba7b54c69dbf848f" },
+    "doctor": { "$oid": "6a882db1d19127beffe43d49" },
+    "appointmentDate": { "$date": "2026-08-23T10:00:00.000Z" },
+    "timeSlot": "10:00 - 11:00",
+    "status": "Pending",
+    "notes": "Follow-up gynecology appointment."
+  },
+  {
+    "patient": { "$oid": "6a8835abba7b54c69dbf8492" },
+    "doctor": { "$oid": "6a882dc7d19127beffe43d4e" },
+    "appointmentDate": { "$date": "2026-08-27T10:00:00.000Z" },
+    "timeSlot": "10:00 - 11:00",
+    "status": "Pending",
+    "notes": "General health consultation."
+  },
+  {
+    "patient": { "$oid": "6a883471ba7b54c69dbf847a" },
+    "doctor": { "$oid": "6a882ddbd19127beffe43d53" },
+    "appointmentDate": { "$date": "2026-08-25T10:00:00.000Z" },
+    "timeSlot": "10:00 - 11:00",
+    "status": "Confirmed",
+    "notes": "Psychiatric follow-up consultation."
+  }
+]

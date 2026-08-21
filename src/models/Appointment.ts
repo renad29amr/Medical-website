@@ -66,5 +66,4 @@ export const Appointment = mongoose.model<IAppointment>(
   appointmentSchema
 );
 
-export default Appointment;
-
+export default Appointment; 

@@ -7,18 +7,11 @@ import adminRouter from "./src/routes/adminRoutes";
 import doctorRouter from "./src/routes/Doctorroutes";
 import scheduleRouter from "./src/routes/Scheduleroutes";
 import appointmentRouter from "./src/routes/appointmentRoutes";
-import swaggerUi from "swagger-ui-express";
-import { swaggerSpec } from "./src/config/swagger";
 
 console.log("Gemini key loaded:", !!env.geminiApiKey);
 
 const app = express();
 app.use(express.json());
-app.use(
-  "/api-docs",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerSpec)
-);
 
 app.get("/", (_req, res) => {
   res.json({ message: "Medical website API is running" });

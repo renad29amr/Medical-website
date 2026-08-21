@@ -1,0 +1,4 @@
+Full Name:Admin 
+Email address: admin@medcare.com
+Password: admin123
+Setup key: admin123

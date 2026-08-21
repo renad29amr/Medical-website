@@ -1,0 +1,330 @@
+[
+  {
+    "doctor": { "$oid": "6a882cd9d19127beffe43d26" },
+    "day": "Saturday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "15:00", "end": "16:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882cd9d19127beffe43d26" },
+    "day": "Monday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882cd9d19127beffe43d26" },
+    "day": "Wednesday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882d33d19127beffe43d2b" },
+    "day": "Sunday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "13:00", "end": "14:00" },
+      { "start": "15:00", "end": "16:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d33d19127beffe43d2b" },
+    "day": "Tuesday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d33d19127beffe43d2b" },
+    "day": "Thursday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "13:00", "end": "14:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882d41d19127beffe43d30" },
+    "day": "Saturday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d41d19127beffe43d30" },
+    "day": "Monday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "15:00", "end": "16:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d41d19127beffe43d30" },
+    "day": "Wednesday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "13:00", "end": "14:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882d5ad19127beffe43d35" },
+    "day": "Sunday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "15:00", "end": "16:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d5ad19127beffe43d35" },
+    "day": "Tuesday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "13:00", "end": "14:00" },
+      { "start": "15:00", "end": "16:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d5ad19127beffe43d35" },
+    "day": "Thursday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882d6ed19127beffe43d3a" },
+    "day": "Saturday",
+    "availableTimeSlots": [
+      { "start": "08:00", "end": "09:00" },
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d6ed19127beffe43d3a" },
+    "day": "Monday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d6ed19127beffe43d3a" },
+    "day": "Wednesday",
+    "availableTimeSlots": [
+      { "start": "08:00", "end": "09:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "12:00", "end": "13:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882d83d19127beffe43d3f" },
+    "day": "Sunday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "13:00", "end": "14:00" },
+      { "start": "15:00", "end": "16:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d83d19127beffe43d3f" },
+    "day": "Tuesday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d83d19127beffe43d3f" },
+    "day": "Friday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "13:00", "end": "14:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882d96d19127beffe43d44" },
+    "day": "Saturday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "12:00", "end": "13:00" },
+      { "start": "14:00", "end": "15:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d96d19127beffe43d44" },
+    "day": "Monday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882d96d19127beffe43d44" },
+    "day": "Wednesday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "13:00", "end": "14:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882db1d19127beffe43d49" },
+    "day": "Sunday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "12:00", "end": "13:00" },
+      { "start": "15:00", "end": "16:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882db1d19127beffe43d49" },
+    "day": "Tuesday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882db1d19127beffe43d49" },
+    "day": "Thursday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "13:00", "end": "14:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882dc7d19127beffe43d4e" },
+    "day": "Saturday",
+    "availableTimeSlots": [
+      { "start": "08:00", "end": "09:00" },
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "13:00", "end": "14:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882dc7d19127beffe43d4e" },
+    "day": "Monday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882dc7d19127beffe43d4e" },
+    "day": "Thursday",
+    "availableTimeSlots": [
+      { "start": "08:00", "end": "09:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "12:00", "end": "13:00" }
+    ],
+    "availability": true
+  },
+
+  {
+    "doctor": { "$oid": "6a882ddbd19127beffe43d53" },
+    "day": "Sunday",
+    "availableTimeSlots": [
+      { "start": "10:00", "end": "11:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "14:00", "end": "15:00" },
+      { "start": "16:00", "end": "17:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882ddbd19127beffe43d53" },
+    "day": "Tuesday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "10:00", "end": "11:00" },
+      { "start": "13:00", "end": "14:00" },
+      { "start": "15:00", "end": "16:00" }
+    ],
+    "availability": true
+  },
+  {
+    "doctor": { "$oid": "6a882ddbd19127beffe43d53" },
+    "day": "Friday",
+    "availableTimeSlots": [
+      { "start": "09:00", "end": "10:00" },
+      { "start": "11:00", "end": "12:00" },
+      { "start": "13:00", "end": "14:00" }
+    ],
+    "availability": true
+  }
+]

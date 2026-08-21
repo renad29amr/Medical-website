@@ -1,0 +1,103 @@
+{
+  "fullName": "Dr. Ahmed Hassan",
+  "email": "ahmed.hassan@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Cardiology",
+  "experience": 12,
+  "clinicAddress": "Nasr City, Cairo",
+  "consultationFee": 500
+}
+
+{
+  "fullName": "Dr. Sara Mohamed",
+  "email": "sara.mohamed@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Dermatology",
+  "experience": 8,
+  "clinicAddress": "Maadi, Cairo",
+  "consultationFee": 400
+}
+
+{
+  "fullName": "Dr. Omar Khaled",
+  "email": "omar.khaled@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Pediatrics",
+  "experience": 10,
+  "clinicAddress": "Dokki, Giza",
+  "consultationFee": 350
+}
+
+{
+  "fullName": "Dr. Mariam Adel",
+  "email": "mariam.adel@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Neurology",
+  "experience": 15,
+  "clinicAddress": "Heliopolis, Cairo",
+  "consultationFee": 600
+}
+{
+  "fullName": "Dr. Youssef Ibrahim",
+  "email": "youssef.ibrahim@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Orthopedics",
+  "experience": 11,
+  "clinicAddress": "6th of October, Giza",
+  "consultationFee": 450
+}
+{
+  "fullName": "Dr. Nour Ali",
+  "email": "nour.ali@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Ophthalmology",
+  "experience": 9,
+  "clinicAddress": "Zamalek, Cairo",
+  "consultationFee": 400
+}
+{
+  "fullName": "Dr. Karim Samir",
+  "email": "karim.samir@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Dentistry",
+  "experience": 7,
+  "clinicAddress": "Mohandessin, Giza",
+  "consultationFee": 300
+}
+{
+  "fullName": "Dr. Menna Tarek",
+  "email": "menna.tarek@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Gynecology",
+  "experience": 13,
+  "clinicAddress": "New Cairo, Cairo",
+  "consultationFee": 500
+}
+{
+  "fullName": "Dr. Mahmoud Nabil",
+  "email": "mahmoud.nabil@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "General Medicine",
+  "experience": 6,
+  "clinicAddress": "Shubra, Cairo",
+  "consultationFee": 250
+}
+{
+  "fullName": "Dr. Jana Mostafa",
+  "email": "jana.mostafa@medcare.com",
+  "password": "Doctor123!",
+  "role": "doctor",
+  "specialty": "Psychiatry",
+  "experience": 10,
+  "clinicAddress": "Agouza, Giza",
+  "consultationFee": 450
+}
