@@ -105,6 +105,85 @@ router.get(
   appointmentController.getAppointments
 );
 
+
+
+/**
+ * @swagger
+ * /api/appointments/available-slots:
+ *   get:
+ *     summary: Get available appointment time slots
+ *     description: |
+ *       Returns the available time slots for a specific doctor on a specific date.
+ *
+ *       The doctor must have an active schedule for that day. Time slots that
+ *       are already booked by another patient are excluded.
+ *
+ *       Only authenticated patients can use this endpoint.
+ *     tags:
+ *       - Appointments
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: doctor
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Doctor Profile ID
+ *         example: 6a882d33d19127beffe43d2b
+ *
+ *       - in: query
+ *         name: date
+ *         required: true
+ *         schema:
+ *           type: string
+ *           format: date
+ *         description: Date for which available slots should be returned. The date must be in the future.
+ *         example: 2026-08-25
+ *
+ *     responses:
+ *       200:
+ *         description: Available time slots retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 doctor:
+ *                   type: string
+ *                   description: Doctor Profile ID
+ *                   example: 6a882d33d19127beffe43d2b
+ *                 date:
+ *                   type: string
+ *                   format: date
+ *                   example: 2026-08-25
+ *                 day:
+ *                   type: string
+ *                   example: Tuesday
+ *                 availableSlots:
+ *                   type: array
+ *                   items:
+ *                     type: string
+ *                   example:
+ *                     - "10:00-11:00"
+ *                     - "11:00-12:00"
+ *                     - "14:00-15:00"
+ *
+ *       400:
+ *         description: Invalid doctor ID, date, or unavailable schedule
+ *
+ *       401:
+ *         description: Unauthorized - authentication token is missing or invalid
+ *
+ *       403:
+ *         description: Only patients can access available appointment slots
+ *
+ *       404:
+ *         description: Doctor schedule not found
+ */
 router.get(
   "/available-slots",
   authenticate,
