@@ -1,4 +1,6 @@
 import express from "express";
+import cors from "cors";
+
 import { connectDB } from "./src/config/db";
 import { env } from "./src/config/env";
 import chatbotRouter from "./src/routes/chatbotRoutes";
@@ -12,6 +14,16 @@ import reviewRouter from "./src/routes/reviewRoutes";
 console.log("Gemini key loaded:", !!env.geminiApiKey);
 
 const app = express();
+// CORS
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://medical-frontend-two-beta.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.get("/", (_req, res) => {
