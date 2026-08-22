@@ -14,20 +14,38 @@ import reviewRouter from "./src/routes/reviewRoutes";
 console.log("Gemini key loaded:", !!env.geminiApiKey);
 
 const app = express();
-// CORS
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://medical-frontend-two-beta.vercel.app",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://medical-frontend-two-beta.vercel.app",
-    ],
+    origin: (origin, callback) => {
+      // Allow requests without Origin
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 app.use(express.json());
 
 app.get("/", (_req, res) => {
-  res.json({ message: "Medical website API is running" });
+  res.json({
+    message: "Medical website API is running",
+  });
 });
 
 app.use("/api/auth", authRouter);
@@ -43,6 +61,7 @@ const PORT = env.port || 5000;
 async function startServer() {
   try {
     await connectDB();
+
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
