@@ -3,6 +3,8 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import User, { UserRole } from "../models/User";
 import { DoctorProfile } from "../models/DoctorProfile";
+import { Appointment } from "../models/Appointment";
+
 const generateToken = (userId: string, role: UserRole): string => {
   const secretKey = process.env.JWT_SECRET || process.env.JWT_SECRET_KEY;
   if (!secretKey) {
@@ -141,6 +143,47 @@ export const getCurrentUser = async (req: Request, res: Response): Promise<void>
   }
 };
 
+// export const deleteAccount = async (
+//   req: Request,
+//   res: Response
+// ): Promise<void> => {
+//   try {
+//     const userId = req.user?.id;
+
+//     if (!userId) {
+//       res.status(401).json({
+//         success: false,
+//         message: "Unauthenticated",
+//       });
+//       return;
+//     }
+
+//     const user = await User.findById(userId);
+
+//     if (!user) {
+//       res.status(404).json({
+//         success: false,
+//         message: "User not found",
+//       });
+//       return;
+//     }
+
+//     await User.findByIdAndDelete(userId);
+
+//     res.status(200).json({
+//       success: true,
+//       message: "Account deleted successfully",
+//     });
+//   } catch (error) {
+//     console.error("Error deleting account:", error);
+
+//     res.status(500).json({
+//       success: false,
+//       message: "Internal server error",
+//     });
+//   }
+// };
+
 export const deleteAccount = async (
   req: Request,
   res: Response
@@ -166,11 +209,17 @@ export const deleteAccount = async (
       return;
     }
 
+    // Delete all appointments belonging to this patient
+    await Appointment.deleteMany({
+      patient: userId,
+    });
+
+    // Delete the user account
     await User.findByIdAndDelete(userId);
 
     res.status(200).json({
       success: true,
-      message: "Account deleted successfully",
+      message: "Account and related appointments deleted successfully",
     });
   } catch (error) {
     console.error("Error deleting account:", error);

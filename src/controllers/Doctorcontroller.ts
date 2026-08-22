@@ -4,7 +4,7 @@ import { DoctorProfile } from "../models/DoctorProfile";
 // GET /api/doctors
 export const getAllDoctors = async (req: Request, res: Response): Promise<void> => {
   try {
-    const doctors = await DoctorProfile.find().populate("user", "name email");
+    const doctors = await DoctorProfile.find().populate("user", "fullName email");
     res.status(200).json(doctors);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch doctors.", error });

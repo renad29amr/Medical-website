@@ -128,6 +128,16 @@ class AppointmentController {
       const patientId = req.user!.id;
       const { doctor, appointmentDate, timeSlot, notes } = req.body;
 
+      console.log("BOOK APPOINTMENT BODY:", req.body);
+      console.log("DOCTOR RECEIVED:", doctor);
+
+      if (!doctor) {
+        return res.status(400).json({
+          success: false,
+          message: "Doctor is required",
+        });
+      }
+
       const appointment = await appointmentService.createAppointment({
         patient: patientId,
         doctor,
@@ -209,48 +219,69 @@ class AppointmentController {
   }
 
   async getAvailableTimeSlots(req: Request, res: Response) {
-  try {
-    const { doctor, date } = req.query;
+    try {
+      const { doctor, date } = req.query;
 
-    if (!doctor || !date) {
-      return res.status(400).json({
+      if (!doctor || !date) {
+        return res.status(400).json({
+          success: false,
+          message: "Doctor and date are required",
+        });
+      }
+
+      const appointmentDate = new Date(date as string);
+
+      if (isNaN(appointmentDate.getTime())) {
+        return res.status(400).json({
+          success: false,
+          message: "Invalid date",
+        });
+      }
+
+      const availableSlots =
+        await appointmentService.getAvailableTimeSlots(
+          doctor as string,
+          appointmentDate
+        );
+
+      return res.status(200).json({
+        success: true,
+        date,
+        doctor,
+        count: availableSlots.length,
+        availableTimeSlots: availableSlots,
+      });
+    } catch (error: any) {
+      console.error("Get available time slots error:", error);
+
+      return res.status(500).json({
         success: false,
-        message: "Doctor and date are required",
+        message:
+          error.message || "Failed to fetch available time slots",
       });
     }
-
-    const appointmentDate = new Date(date as string);
-
-    if (isNaN(appointmentDate.getTime())) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid date",
-      });
-    }
-
-    const availableSlots =
-      await appointmentService.getAvailableTimeSlots(
-        doctor as string,
-        appointmentDate
-      );
-
-    return res.status(200).json({
-      success: true,
-      date,
-      doctor,
-      count: availableSlots.length,
-      availableTimeSlots: availableSlots,
-    });
-  } catch (error: any) {
-    console.error("Get available time slots error:", error);
-
-    return res.status(500).json({
-      success: false,
-      message:
-        error.message || "Failed to fetch available time slots",
-    });
   }
-}
+
+  // async cancelAppointment(req: Request, res: Response) {
+  //   try {
+  //     const appointmentId = req.params.id as string;
+  //     const userId = req.user!.id;
+  //     const role = req.user!.role;
+
+  //     const appointment = await appointmentService.cancelAppointment(appointmentId, userId, role);
+
+  //     return res.status(200).json({
+  //       success: true,
+  //       message: "Appointment cancelled successfully",
+  //       appointment,
+  //     });
+  //   } catch (error: any) {
+  //     return res.status(400).json({
+  //       success: false,
+  //       message: error.message || "Failed to cancel appointment",
+  //     });
+  //   }
+  // }
 
   async cancelAppointment(req: Request, res: Response) {
     try {
@@ -258,7 +289,30 @@ class AppointmentController {
       const userId = req.user!.id;
       const role = req.user!.role;
 
-      const appointment = await appointmentService.cancelAppointment(appointmentId, userId, role);
+      let ownerId = userId;
+
+      // Appointment.doctor stores DoctorProfile._id,
+      // while req.user.id is User._id.
+      if (role === "doctor") {
+        const doctorProfile = await DoctorProfile.findOne({
+          user: userId,
+        });
+
+        if (!doctorProfile) {
+          return res.status(404).json({
+            success: false,
+            message: "Doctor profile not found.",
+          });
+        }
+
+        ownerId = doctorProfile._id.toString();
+      }
+
+      const appointment = await appointmentService.cancelAppointment(
+        appointmentId,
+        ownerId,
+        role
+      );
 
       return res.status(200).json({
         success: true,

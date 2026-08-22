@@ -435,6 +435,37 @@ router.get(
   getCurrentUser
 );
 
+/**
+ * @swagger
+ * /api/auth/delete-account:
+ *   delete:
+ *     summary: Delete current user account
+ *     description: Deletes the account of the currently authenticated user.
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Account deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   example: Account deleted successfully
+ *       401:
+ *         description: Unauthorized - missing or invalid authentication token
+ *       404:
+ *         description: User account not found
+ *       500:
+ *         description: Internal server error
+ */
 router.delete(
   "/delete-account",
   authenticate,

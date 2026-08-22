@@ -28,7 +28,7 @@ const appointmentSchema = new Schema<IAppointment>(
 
     doctor: {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: "DoctorProfile",
       required: true,
     },
 
