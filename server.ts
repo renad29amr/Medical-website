@@ -7,6 +7,7 @@ import adminRouter from "./src/routes/adminRoutes";
 import doctorRouter from "./src/routes/Doctorroutes";
 import scheduleRouter from "./src/routes/Scheduleroutes";
 import appointmentRouter from "./src/routes/appointmentRoutes";
+import reviewRouter from "./src/routes/reviewRoutes";
 
 console.log("Gemini key loaded:", !!env.geminiApiKey);
 
@@ -22,6 +23,7 @@ app.use("/api/admin", adminRouter);
 app.use("/api/doctors", doctorRouter);
 app.use("/api/schedules", scheduleRouter);
 app.use("/api/appointments", appointmentRouter);
+app.use("/api/reviews", reviewRouter);
 app.use("/api/chatbot", chatbotRouter);
 
 const PORT = env.port || 5000;

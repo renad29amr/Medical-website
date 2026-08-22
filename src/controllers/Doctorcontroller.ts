@@ -52,6 +52,8 @@ export const updateOwnProfile = async (req: Request, res: Response): Promise<voi
     res.status(400).json({ message: "Failed to update profile.", error });
   }
 };
+
+
 export const searchDoctors = async (
   req: Request,
   res: Response
@@ -59,12 +61,22 @@ export const searchDoctors = async (
   try {
     const name = req.query.name as string | undefined;
     const specialty = req.query.specialty as string | undefined;
+    const clinicAddress = req.query.clinicAddress as string | undefined;
 
     const query: Record<string, any> = {};
 
+    // Search by specialty
     if (specialty) {
       query.specialty = {
         $regex: specialty.trim(),
+        $options: "i",
+      };
+    }
+
+    // Search by clinic address
+    if (clinicAddress) {
+      query.clinicAddress = {
+        $regex: clinicAddress.trim(),
         $options: "i",
       };
     }
@@ -74,6 +86,7 @@ export const searchDoctors = async (
       select: "fullName email",
     });
 
+    // Search by doctor's name
     if (name) {
       const searchName = name.trim().toLowerCase();
 
@@ -91,7 +104,6 @@ export const searchDoctors = async (
 
     res.status(500).json({
       message: "Server error",
-    });
+    })
   }
-
 };
