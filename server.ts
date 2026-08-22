@@ -15,28 +15,10 @@ console.log("Gemini key loaded:", !!env.geminiApiKey);
 
 const app = express();
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://medical-frontend-two-beta.vercel.app",
-];
-
 app.use(
   cors({
-    origin: (origin, callback) => {
-      // Allow requests without Origin
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error("Not allowed by CORS"));
-    },
+    origin: "https://medical-frontend-two-beta.vercel.app",
     credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
